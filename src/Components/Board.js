@@ -9,17 +9,21 @@ export default function Board() {
     { country: "Egypt", capital: "Cairo" },
     { country: "India", capital: "New Delhi" },
   ];
+  console.log(Data);
   return (
     <div>
       <div className="countryContainer">
         {Data.map((card, index) => (
-          <Card country={card.country} />
-        ))}
+          <Card className="cardCountry" country={card.country}
+        //    />
+    //     ))}
+    //   </div>
+    //   <div className="capitalContainer">
+    //   {Data.map((card, index) => (
+        // <Card 
+        className="cardCapital" capital={card.capital} />
+      ))}
       </div>
-      <div className="capitalContainer"></div>
-      {Data.map((card, index) => {
-        <Card capital={card.capital} />;
-      })}
     </div>
   );
 }
