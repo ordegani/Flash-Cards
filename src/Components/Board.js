@@ -9,6 +9,8 @@ export default function Board() {
     { country: "Egypt", capital: "Cairo" },
     { country: "India", capital: "New Delhi" },
   ];
+  localStorage.setItem('data', Data);
+  
   console.log(Data);
   return (
     <div>
