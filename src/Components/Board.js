@@ -9,6 +9,7 @@ export default function Board() {
     { country: "Egypt", capital: "Cairo" },
     { country: "India", capital: "New Delhi" },
   ]);
+
   localStorage.setItem("data", Data);
   console.log(Data);
 
@@ -17,16 +18,19 @@ export default function Board() {
   //     setData()
   //     console.log(Data[1].country);}
 
-  // TOCOMPLETE:
-  const Delete = (index) => {
-    Data.splice(index, 1);
-    // renderData();
-    console.log(Data);
+  const Delete = (x) => {
+    setData(Data.filter((element) => element.country !== x.country));
+    localStorage.setItem("data", Data);
   };
+  // const Delete = (index) => {
+  //   Data.splice(index, 1);
+  //   console.log(Data);
+  //   localStorage.setItem("data", Data);
+  // };
 
   return (
     <div>
-      <div className="countryContainer">
+      <div className="container">
         {Data.map((card, index) => (
           <Card
             className="card"
