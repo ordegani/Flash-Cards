@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
+import './Board.css'
 
 export default function Board() {
   const [Data, setData] = useState([
@@ -8,10 +9,13 @@ export default function Board() {
     { country: "Russia", capital: "moscow" },
     { country: "Egypt", capital: "Cairo" },
     { country: "India", capital: "New Delhi" },
+    { country: "Japan", capital: "Tokio" },
   ]);
 
-  localStorage.setItem("data", Data);
-  console.log(Data);
+  Data.forEach(element => {localStorage.setItem("country", element.country);
+    
+  });
+  
 
   //if Data was an array without objets in it:
   //   const Delete = (card) => {
