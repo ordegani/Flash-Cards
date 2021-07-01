@@ -22,7 +22,11 @@ export default function Board() {
   };
 
   //TODO
-  //try create delete function withh splice()
+  //try create delete function with splice()
+
+  //TODO
+  const update = ()=>{}
+
 
   return (
     <div>

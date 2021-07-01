@@ -1,17 +1,19 @@
 :root {
-  background-color: green;
+  --main: green;
+  --sub: rgb(139, 206, 139);
+  background-color: var(--main);
 }
 .card {
   padding: 1rem;
-  border: 1px solid green;
+  border: 1px solid var(--main);
   width: 20vw;
   height: 30vh;
-  background-color: rgb(139, 206, 139);
-  color: green;
+  background-color: var(--sub);
+  color: var(--main);
 }
 .deleteBtn {
-  color: green;
-  border: green 1px solid;
+  color: var(--main);
+  border: var(--main) 1px solid;
   border-radius: 60px 0px;
   padding: 10%;
   font-size: small;
