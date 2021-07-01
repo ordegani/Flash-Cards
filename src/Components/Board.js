@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
-import './Board.css'
+import "./Board.css";
 
 export default function Board() {
   const [Data, setData] = useState([
@@ -12,16 +12,17 @@ export default function Board() {
     { country: "Japan", capital: "Tokio" },
   ]);
 
-  Data.forEach(element => {localStorage.setItem("country", element.country); 
+  Data.forEach((element) => {
+    localStorage.setItem("country", element.country);
   });
-  
+
   const Delete = (x) => {
     setData(Data.filter((element) => element.country !== x.country));
     localStorage.setItem("data", Data);
   };
-  
-//TODO
-//try create delete function withh splice()
+
+  //TODO
+  //try create delete function withh splice()
 
   return (
     <div>

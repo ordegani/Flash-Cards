@@ -1,23 +1,22 @@
-:root{
-    background-color: green;
+:root {
+  background-color: green;
 }
-.card{
-    padding:1rem;
-    border: 1px solid green;
-    width:20vw;
-    height: 30vh;
-    background-color: rgb(139, 206, 139);
-    color: green;
+.card {
+  padding: 1rem;
+  border: 1px solid green;
+  width: 20vw;
+  height: 30vh;
+  background-color: rgb(139, 206, 139);
+  color: green;
 }
-.deleteBtn{
-    color: green;
-    border: green 1px solid;
-    border-radius: 60px 0px;
-    padding: 10%;
-    font-size: small;
+.deleteBtn {
+  color: green;
+  border: green 1px solid;
+  border-radius: 60px 0px;
+  padding: 10%;
+  font-size: small;
 }
-.container{
-    display: flex;
-    flex-direction: row;
-
+.container {
+  display: flex;
+  flex-direction: row;
 }
