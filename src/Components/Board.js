@@ -12,25 +12,16 @@ export default function Board() {
     { country: "Japan", capital: "Tokio" },
   ]);
 
-  Data.forEach(element => {localStorage.setItem("country", element.country);
-    
+  Data.forEach(element => {localStorage.setItem("country", element.country); 
   });
   
-
-  //if Data was an array without objets in it:
-  //   const Delete = (card) => {
-  //     setData()
-  //     console.log(Data[1].country);}
-
   const Delete = (x) => {
     setData(Data.filter((element) => element.country !== x.country));
     localStorage.setItem("data", Data);
   };
-  // const Delete = (index) => {
-  //   Data.splice(index, 1);
-  //   console.log(Data);
-  //   localStorage.setItem("data", Data);
-  // };
+  
+//TODO
+//try create delete function withh splice()
 
   return (
     <div>
@@ -39,13 +30,6 @@ export default function Board() {
           <Card
             className="card"
             country={card.country}
-            //    />
-            //     ))}
-            //   </div>
-            //   <div className="capitalContainer">
-            //   {Data.map((card, index) => (
-            // <Card
-            // className="cardCapital"
             capital={card.capital}
             onClick={Delete}
             buttonText="DELETE"
