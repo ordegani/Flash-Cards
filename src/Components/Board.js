@@ -8,7 +8,6 @@ export default function Board() {
     { country: "England", capital: "London" },
     { country: "Russia", capital: "moscow" },
     { country: "Egypt", capital: "Cairo" },
-    { country: "India", capital: "New Delhi" },
     { country: "Japan", capital: "Tokio" },
   ]);
 
@@ -35,6 +34,13 @@ export default function Board() {
           <Card
             className="card"
             country={card.country}
+            onClick={Delete}
+            buttonText="DELETE"
+          />
+        ))}
+                {Data.map((card, index) => (
+          <Card
+            className="card2"
             capital={card.capital}
             onClick={Delete}
             buttonText="DELETE"
