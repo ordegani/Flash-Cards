@@ -29,23 +29,28 @@ export default function Board() {
 
   return (
     <div class="flip-card">
-      <div className="flip-card-inner">
+
+<div class="flip-card-inner">
+<div className="flip-card-front">
         {Data.map((card, index) => (
           <Card
-            className="flip-card-front"
+          
             country={card.country}
             onClick={Delete}
             buttonText="DELETE"
           />
-        ))}
+        ))}/</div>
+        
+        <div class="flip-card-back">
                 {Data.map((card, index) => (
           <Card
-            className="flip-card-back"
+
             capital={card.capital}
             onClick={Delete}
             buttonText="DELETE"
           />
-        ))}
+        ))}</div>
+      
       </div>
     </div>
   );
