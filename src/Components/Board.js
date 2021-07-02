@@ -25,34 +25,28 @@ export default function Board() {
   //try create delete function with splice()
 
   //TODO
-  const update = ()=>{}
-
+  const update = () => {};
 
   return (
     <div class="flip-card">
+      <div class="flip-card-inner">
+        <div className="flip-card-front">
+          {Data.map((card, index) => (
+            <Card
+              country={card.country}
+              // onClick={Delete}
+              buttonText="SHOW"
+            />
+          ))}
+          /
+        </div>
 
-<div class="flip-card-inner">
-<div className="flip-card-front">
-        {Data.map((card, index) => (
-          <Card
-          
-            country={card.country}
-            // onClick={Delete}
-            buttonText="SHOW"
-          />
-        ))}/</div>
-        
         <div class="flip-card-back">
-                {Data.map((card, index) => (
-          <Card
-
-            capital={card.capital}
-            onClick={Delete}
-            buttonText="DELETE"
-          />
-        ))}</div>
-      
+          {Data.map((card, index) => (
+            <Card capital={card.capital} onClick={Delete} buttonText="DELETE" />
+          ))}
+        </div>
       </div>
     </div>
   );
-                }
+}
