@@ -32,7 +32,7 @@ export default function Board() {
       <div class="flip-card-inner">
         <div className="flip-card-front">
           {Data.map((card, index) => (
-            <Card
+            <Card className="flip-card-front"
               country={card.country}
               // onClick={Delete}
               buttonText="SHOW"
