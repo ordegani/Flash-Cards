@@ -14,4 +14,4 @@ export default function Card({ country, capital, onClick, buttonText }) {
       </button>
     </div>
   );
-}
+  }

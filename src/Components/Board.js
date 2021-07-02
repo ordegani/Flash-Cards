@@ -28,11 +28,11 @@ export default function Board() {
 
 
   return (
-    <div>
-      <div className="container">
+    <div class="flip-card">
+      <div className="flip-card-inner">
         {Data.map((card, index) => (
           <Card
-            className="card"
+            className="flip-card-front"
             country={card.country}
             onClick={Delete}
             buttonText="DELETE"
@@ -40,7 +40,7 @@ export default function Board() {
         ))}
                 {Data.map((card, index) => (
           <Card
-            className="card2"
+            className="flip-card-back"
             capital={card.capital}
             onClick={Delete}
             buttonText="DELETE"
@@ -49,4 +49,4 @@ export default function Board() {
       </div>
     </div>
   );
-}
+                }
