@@ -16,7 +16,8 @@ export default function Board() {
   });
 
   const Delete = (x) => {
-    setData(Data.filter((element) => element.country !== x.country));
+    console.log(x.capital);
+    setData(Data.filter((element) => element.capital !== x.capital));
     localStorage.setItem("data", Data);
   };
 
@@ -36,8 +37,8 @@ export default function Board() {
           <Card
           
             country={card.country}
-            onClick={Delete}
-            buttonText="DELETE"
+            // onClick={Delete}
+            buttonText="SHOW"
           />
         ))}/</div>
         
