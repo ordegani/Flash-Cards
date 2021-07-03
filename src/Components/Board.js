@@ -27,12 +27,13 @@ export default function Board() {
   //TODO
   const update = () => {};
 
+  
   return (
     <div class="flip-card">
       <div class="flip-card-inner">
         <div className="flip-card-front">
           {Data.map((card, index) => (
-            <Card className="flip-card-front"
+            <Card className={`flip-card-${front}`}
               country={card.country}
               // onClick={Delete}
               buttonText="SHOW"
@@ -41,7 +42,7 @@ export default function Board() {
           /
         </div>
 
-        <div class="flip-card-back">
+        <div class={`flip-card-${back}`}>
           {Data.map((card, index) => (
             <Card capital={card.capital} onClick={Delete} buttonText="DELETE" />
           ))}
