@@ -19,15 +19,20 @@ export default function Board() {
     console.log(x.capital);
     setData(Data.filter((element) => element.capital !== x.capital));
     localStorage.setItem("data", Data);
+    console.log(Data);
   };
 
   //TODO
   //try create delete function with splice()
 
   //TODO
-  const update = () => {};
+  const update = (e) => {
+    const addition = (e.target.value);
+    console.log(addition);
+  };
 
   return (
+    <div className="container">
     <div class="flip-card">
       <div class="flip-card-inner">
         <div className="flip-card-front">
@@ -48,5 +53,29 @@ export default function Board() {
         </div>
       </div>
     </div>
+    <form onSubmit={update} className="search-form">
+        <input
+          className="input"
+          placeholder="Add to your memory Cards"
+          type="text"
+          // value={addition}
+          onChange={update}
+        />
+        <button className="search-button" type="Submit">
+          Add
+        </button>
+        <input
+          className="input2"
+          placeholder="Add to your memory Cards" 
+          type="text"
+          // value={addition}
+          onChange={update}
+        />
+        <button className="search-button" type="Submit">
+          Add
+        </button>
+      </form>
+
+  </div>  
   );
 }

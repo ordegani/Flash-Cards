@@ -6,12 +6,12 @@
 .card {
   padding: 1rem;
   border: 1px solid var(--main);
-  width: 20vw;
+  width: 25vw;
   height: 30vh;
   background-color: var(--sub);
   color: var(--main);
 }
-.deleteBtn {
+.deleteBtn{
   color: var(--main);
   border: var(--main) 1px solid;
   border-radius: 60px 0px;
@@ -50,3 +50,22 @@
   /* color: white; */
   transform: rotateY(180deg);
 }
+.search-form{
+  background-color: green;
+  height: 40vh;
+  width:30vw;
+  float: right;
+margin-right: 10%;
+}
+.input{
+  background-color: white;
+}
+.search-button{
+  border-radius: 60px 0px;
+  font-size: small;
+}
+.input, .input2{
+  border-radius: 60px 0px;
+  width:120%;
+}
+
