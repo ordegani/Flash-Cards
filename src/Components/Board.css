@@ -2,6 +2,7 @@
   --main: green;
   --sub: rgb(139, 206, 139);
   background-color: var(--main);
+  color: var(--sub);
 }
 .card {
   padding: 1rem;
@@ -11,7 +12,7 @@
   background-color: var(--sub);
   color: var(--main);
 }
-.deleteBtn{
+.deleteBtn {
   color: var(--main);
   border: var(--main) 1px solid;
   border-radius: 60px 0px;
@@ -50,22 +51,23 @@
   /* color: white; */
   transform: rotateY(180deg);
 }
-.search-form{
+.search-form {
   background-color: green;
   height: 40vh;
-  width:30vw;
+  width: 30vw;
   float: right;
-margin-right: 10%;
+  margin-right: 10%;
 }
-.input{
+.input {
   background-color: white;
 }
-.search-button{
+.search-button {
   border-radius: 60px 0px;
   font-size: small;
+  background-color: var(--sub);
 }
-.input, .input2{
+.input,
+.input2 {
   border-radius: 60px 0px;
-  width:120%;
+  width: 120%;
 }
-

@@ -27,33 +27,39 @@ export default function Board() {
 
   //TODO
   const update = (e) => {
-    const addition = (e.target.value);
+    const addition = e.target.value;
     console.log(addition);
   };
 
   return (
     <div className="container">
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div className="flip-card-front">
-          {Data.map((card, index) => (
-            <Card className="flip-card-front"
-              country={card.country}
-              // onClick={Delete}
-              buttonText="SHOW"
-            />
-          ))}
-          /
-        </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div className="flip-card-front">
+            {Data.map((card, index) => (
+              <Card
+                className="flip-card-front"
+                country={card.country}
+                // onClick={Delete}
+                buttonText="SHOW"
+              />
+            ))}
+            /
+          </div>
 
-        <div class="flip-card-back">
-          {Data.map((card, index) => (
-            <Card capital={card.capital} onClick={Delete} buttonText="DELETE" />
-          ))}
+          <div class="flip-card-back">
+            {Data.map((card, index) => (
+              <Card
+                capital={card.capital}
+                onClick={Delete}
+                buttonText="DELETE"
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-    <form onSubmit={update} className="search-form">
+      <form onSubmit={update} className="search-form">
+        <h1 className="smallTitle">LET'S PLAY!</h1>
         <input
           className="input"
           placeholder="Add to your memory Cards"
@@ -66,7 +72,7 @@ export default function Board() {
         </button>
         <input
           className="input2"
-          placeholder="Add to your memory Cards" 
+          placeholder="Add to your memory Cards"
           type="text"
           // value={addition}
           onChange={update}
@@ -75,7 +81,6 @@ export default function Board() {
           Add
         </button>
       </form>
-
-  </div>  
+    </div>
   );
 }
