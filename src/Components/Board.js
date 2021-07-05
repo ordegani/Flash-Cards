@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "./Card";
 import "./Board.css";
 
@@ -26,20 +26,22 @@ export default function Board() {
   //try create delete function with splice()
 
   //TODO
+  let country = "country";
+  let capital = "capital";
   const Update = (e) => {
     e.preventDefault();
-    const country = (e.target.value);
-    setData(Data.push({country}));
-    console.log(Data);
- 
-  };
+    country = (e.target.value);
+    // setData(Data.push({country:country}));
+    console.log(Data);}
+
   const Update2 = (e) => {
     e.preventDefault();
-    const capital = (e.target.value);
-    Data.push({ country: "Japan", capital: "Tokio" });
-    console.log(Data);
+    capital = (e.target.value);
+    // setData(Data.push({capital:capital}));
+    console.log(Data);}
+
+    setData([...Data, {country:country, capital:capital}])
  
-  };
 
   return (
     <div className="container">
@@ -68,13 +70,13 @@ export default function Board() {
           </div>
         </div>
       </div>
-      <form onSubmit={Update} className="search-form">
+      <form className="search-form">
         <h1 className="smallTitle">LET'S PLAY!</h1>
         <input
           className="input"
-          placeholder="Add to your memory Cards"
+          placeholder="Add country to your memory Cards"
           type="text"
-          // value={addition}
+          value={country}
           onChange={Update}
         />
         <button className="search-button" type="Submit">
@@ -82,9 +84,9 @@ export default function Board() {
         </button>
         <input
           className="input2"
-          placeholder="Add to your memory Cards"
+          placeholder="Add capital to your country"
           type="text"
-          // value={addition}
+          value={capital}
           onChange={Update2}
         />
         <button className="search-button" type="Submit">
