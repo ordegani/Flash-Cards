@@ -24,10 +24,10 @@ export default function Board() {
 
   //TODO
   //try create delete function with splice()
-
+const addition="addition";
   //TODO
   const update = (e) => {
-    const addition = e.target.value;
+    addition = e.target.value;
     console.log(addition);
   };
 
@@ -49,7 +49,7 @@ export default function Board() {
 
           <div class="flip-card-back">
             {Data.map((card, index) => (
-              <Card
+              <Card 
                 capital={card.capital}
                 onClick={Delete}
                 buttonText="DELETE"
@@ -64,7 +64,7 @@ export default function Board() {
           className="input"
           placeholder="Add to your memory Cards"
           type="text"
-          // value={addition}
+          value={addition}
           onChange={update}
         />
         <button className="search-button" type="Submit">
