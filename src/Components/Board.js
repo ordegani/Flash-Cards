@@ -28,9 +28,18 @@ export default function Board() {
   //TODO
   const Update = (e) => {
     e.preventDefault();
-    const addition = (e.target.value);
-    Data.push(addition);
-    console.log(Data);};
+    const country = (e.target.value);
+    setData(Data.push({country}));
+    console.log(Data);
+ 
+  };
+  const Update2 = (e) => {
+    e.preventDefault();
+    const capital = (e.target.value);
+    Data.push({ country: "Japan", capital: "Tokio" });
+    console.log(Data);
+ 
+  };
 
   return (
     <div className="container">
@@ -76,7 +85,7 @@ export default function Board() {
           placeholder="Add to your memory Cards"
           type="text"
           // value={addition}
-          onChange={Update}
+          onChange={Update2}
         />
         <button className="search-button" type="Submit">
           Add
