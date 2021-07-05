@@ -14,6 +14,7 @@ export default function Board() {
   Data.forEach((element) => {
     localStorage.setItem("country", element.country);
   });
+const [add1, setadd1] = useState("")
 
   const Delete = (x) => {
     console.log(x.capital);
@@ -31,16 +32,17 @@ export default function Board() {
   const Update = (e) => {
     e.preventDefault();
     country = (e.target.value);
-    // setData(Data.push({country:country}));
-    console.log(Data);}
+   setadd1(country);
+    console.log(Data);
+    setData([...Data, {country:country}])}
 
   const Update2 = (e) => {
     e.preventDefault();
     capital = (e.target.value);
     // setData(Data.push({capital:capital}));
-    console.log(Data);}
+    console.log(Data);
 
-    setData([...Data, {country:country, capital:capital}])
+    setData([...Data, {capital:capital}])}
  
 
   return (
@@ -70,13 +72,13 @@ export default function Board() {
           </div>
         </div>
       </div>
-      <form className="search-form">
+      <form onSubmit={Update}  className="search-form">
         <h1 className="smallTitle">LET'S PLAY!</h1>
         <input
           className="input"
           placeholder="Add country to your memory Cards"
           type="text"
-          value={country}
+          value={add1}
           onChange={Update}
         />
         <button className="search-button" type="Submit">
@@ -86,7 +88,7 @@ export default function Board() {
           className="input2"
           placeholder="Add capital to your country"
           type="text"
-          value={capital}
+          // value={capital}
           onChange={Update2}
         />
         <button className="search-button" type="Submit">
