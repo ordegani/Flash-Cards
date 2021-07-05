@@ -28,16 +28,29 @@ const [add2, setadd2] = useState("");
   //try create delete function with splice()
 
   //TODO
-  let country = "country";
-  let capital = "capital";
-  const Update = (e) => {
-    //eventlistener
-    e.preventDefault();
-    country = (e.target.value);
-   setadd1(country);
-    console.log(Data);
 
-    setData([...Data, {country:add1, capital:add2}])}
+  const Update = (e) => {
+
+    e.preventDefault();
+   setadd1(e.target.value);
+  console.log(e.target.value);}
+
+   const Update2=(e)=>{
+    e.preventDefault();
+   setadd2(e.target.value);
+  console.log(e.target.value);}
+   
+
+const updateAll=()=>{
+   
+    const add3=add1.toString();
+    const add4=add2.toString();
+    setData([...Data, {country:add3, capital:add4}]);
+    console.log(add3, add4);
+    Data.push({country:add3, capital:add4});
+    setadd2("");
+    setadd1("");
+  }
   
 
   // const Update2 = (e) => {
@@ -52,6 +65,33 @@ const [add2, setadd2] = useState("");
 
   return (
     <div className="container">
+      <form onSubmit={updateAll} className="search-form">
+        <h1 className="smallTitle">LET'S PLAY!</h1>
+        <input
+          className="input"
+          placeholder="Add country to your memory Cards"
+          type="text"
+          value={add1}
+            onChange={Update}
+        />
+        
+        {/* <button className="search-button" type="Submit">
+          Add
+        </button> */}
+        
+        <input
+          className="input2"
+          placeholder="Add capital to your country"
+          type="text"
+          value={add2}
+          onChange={Update2}
+        />
+        <button className="search-button" type="Submit">
+          Add
+        </button>
+      </form>
+
+
       <div class="flip-card">
         <div class="flip-card-inner">
           <div className="flip-card-front">
@@ -77,29 +117,6 @@ const [add2, setadd2] = useState("");
           </div>
         </div>
       </div>
-      <form onSubmit={Update}  className="search-form">
-        <h1 className="smallTitle">LET'S PLAY!</h1>
-        <input
-          className="input"
-          placeholder="Add country to your memory Cards"
-          type="text"
-          value={add1}
-          onChange={Update}
-        />
-        <button className="search-button" type="Submit">
-          Add
-        </button>
-        <input
-          className="input2"
-          placeholder="Add capital to your country"
-          type="text"
-          value={add2}
-          onChange={Update}
-        />
-        <button className="search-button" type="Submit">
-          Add
-        </button>
-      </form>
     </div>
   );
 }

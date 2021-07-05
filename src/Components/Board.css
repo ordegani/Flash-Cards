@@ -53,10 +53,9 @@
 }
 .search-form {
   background-color: green;
-  height: 40vh;
-  width: 30vw;
-  float: right;
-  margin-right: 10%;
+  margin-left: 40%;
+  width:10rem;
+  
 }
 .input {
   background-color: white;
