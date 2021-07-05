@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "./Card";
 import "./Board.css";
 
@@ -24,12 +24,13 @@ export default function Board() {
 
   //TODO
   //try create delete function with splice()
-const addition="addition";
+
   //TODO
-  const update = (e) => {
-    addition = e.target.value;
-    console.log(addition);
-  };
+  const Update = (e) => {
+    e.preventDefault();
+    const addition = (e.target.value);
+    Data.push(addition);
+    console.log(Data);};
 
   return (
     <div className="container">
@@ -40,7 +41,7 @@ const addition="addition";
               <Card
                 className="flip-card-front"
                 country={card.country}
-                // onClick={Delete}
+                onClick={Delete}
                 buttonText="SHOW"
               />
             ))}
@@ -58,14 +59,14 @@ const addition="addition";
           </div>
         </div>
       </div>
-      <form onSubmit={update} className="search-form">
+      <form onSubmit={Update} className="search-form">
         <h1 className="smallTitle">LET'S PLAY!</h1>
         <input
           className="input"
           placeholder="Add to your memory Cards"
           type="text"
-          value={addition}
-          onChange={update}
+          // value={addition}
+          onChange={Update}
         />
         <button className="search-button" type="Submit">
           Add
@@ -75,7 +76,7 @@ const addition="addition";
           placeholder="Add to your memory Cards"
           type="text"
           // value={addition}
-          onChange={update}
+          onChange={Update}
         />
         <button className="search-button" type="Submit">
           Add
