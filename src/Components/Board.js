@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "./Card";
 import "./Board.css";
 
@@ -14,8 +14,8 @@ export default function Board() {
   Data.forEach((element) => {
     localStorage.setItem("country", element.country);
   });
-const [add1, setadd1] = useState("");
-const [add2, setadd2] = useState("");
+  const [add1, setadd1] = useState("");
+  const [add2, setadd2] = useState("");
 
   const Delete = (x) => {
     console.log(x.capital);
@@ -30,55 +30,59 @@ const [add2, setadd2] = useState("");
   //TODO
 
   const Update = (e) => {
-
     e.preventDefault();
-   setadd1(e.target.value);
-  console.log(e.target.value);}
+    setadd1(e.target.value);
+    console.log(e.target.value);
+  };
 
-   const Update2=(e)=>{
+  const Update2 = (e) => {
     e.preventDefault();
-   setadd2(e.target.value);
-  console.log(e.target.value);}
-   
+    setadd2(e.target.value);
+    console.log(e.target.value);
+  };
 
-const updateAll=()=>{
-   
-    const add3=add1.toString();
-    const add4=add2.toString();
-    setData([...Data, {country:add3, capital:add4}]);
-    console.log(add3, add4);
-    Data.push({country:add3, capital:add4});
+  const UpdateAll = () => {
+    console.log(Data);
+    // const add3 = add1.toString();
+    // const add4 = add2.toString();
+    setData([...Data, { country: add1, capital: add2 }]);
+    console.log(add1, add2);
+    Data.push({ country: add1, capital: add2 });
     setadd2("");
     setadd1("");
-  }
-  
+    console.log(Data);
+  };
+  //TODO
+  useEffect(() => {
+    UpdateAll();
 
+  }, [Data])
+  
   // const Update2 = (e) => {
   //   e.preventDefault();
   //   capital = (e.target.value);
   //   setadd2(capital);
-    // setData(Data.push({capital:capital}));
-    // console.log(Data);}
+  // setData(Data.push({capital:capital}));
+  // console.log(Data);}
 
-    // setData([...Data, {country:add1,capital:add2}])
- 
+  // setData([...Data, {country:add1,capital:add2}])
 
   return (
     <div className="container">
-      <form onSubmit={updateAll} className="search-form">
+      <form onSubmit={UpdateAll} className="search-form">
         <h1 className="smallTitle">LET'S PLAY!</h1>
         <input
           className="input"
           placeholder="Add country to your memory Cards"
           type="text"
           value={add1}
-            onChange={Update}
+          onChange={Update}
         />
-        
+
         {/* <button className="search-button" type="Submit">
           Add
         </button> */}
-        
+
         <input
           className="input2"
           placeholder="Add capital to your country"
@@ -91,9 +95,8 @@ const updateAll=()=>{
         </button>
       </form>
 
-
-      <div class="flip-card">
-        <div class="flip-card-inner">
+      <div className="flip-card">
+        <div className="flip-card-inner">
           <div className="flip-card-front">
             {Data.map((card, index) => (
               <Card
@@ -106,9 +109,9 @@ const updateAll=()=>{
             /
           </div>
 
-          <div class="flip-card-back">
+          <div className="flip-card-back">
             {Data.map((card, index) => (
-              <Card 
+              <Card
                 capital={card.capital}
                 onClick={Delete}
                 buttonText="DELETE"
