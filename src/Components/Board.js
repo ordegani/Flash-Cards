@@ -11,9 +11,10 @@ export default function Board() {
     { country: "Japan", capital: "Tokio" },
   ]);
 
-  Data.forEach((element) => {
+  Data.forEach((element, index) => {
     localStorage.setItem("country", element.country);
   });
+
   const [add1, setadd1] = useState("");
   const [add2, setadd2] = useState("");
 
@@ -33,6 +34,7 @@ export default function Board() {
     e.preventDefault();
     setadd1(e.target.value);
     console.log(e.target.value);
+    console.log(Data);
   };
 
   const Update2 = (e) => {
@@ -42,22 +44,18 @@ export default function Board() {
   };
 
   const UpdateAll = () => {
-    console.log(Data);
     // const add3 = add1.toString();
     // const add4 = add2.toString();
-    setData([...Data, { country: add1, capital: add2 }]);
+    setData([...Data, { country: add1, capital: "b" }]);
     console.log(add1, add2);
-    Data.push({ country: add1, capital: add2 });
-    setadd2("");
-    setadd1("");
+    // Data.push({ country: add1, capital: add2 });
     console.log(Data);
   };
   //TODO
   useEffect(() => {
     UpdateAll();
+  }, [add1]);
 
-  }, [Data])
-  
   // const Update2 = (e) => {
   //   e.preventDefault();
   //   capital = (e.target.value);
